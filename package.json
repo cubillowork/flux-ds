@@ -1,7 +1,7 @@
 {
-  "name": "flux-installer-prototype",
+  "name": "flux-ds",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,9 +11,7 @@
     "tokens": "node scripts/build-tokens.mjs"
   },
   "dependencies": {
-    "@fontsource/lexend": "^5.3.0",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "@fontsource/lexend": "^5.3.0"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",
@@ -22,6 +20,21 @@
     "@vitejs/plugin-react": "^6.1.2",
     "oxlint": "^1.90.0",
     "typescript": "~7.0.2",
-    "vite": "^8.3.6"
+    "vite": "^8.3.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "description": "Flux design system in code (TCL SunPower) — tokens, icons and React components generated from the Flux DS Figma file.",
+  "exports": {
+    ".": "./src/flux/index.ts",
+    "./flux.css": "./src/flux/flux.css"
+  },
+  "files": [
+    "src/flux",
+    "tokens"
+  ],
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
   }
 }
