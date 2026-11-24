@@ -167,6 +167,7 @@ a.flux-link:visited { color: var(--component-link-variant-primary-visited-text);
 /* Stepper — 28px high, border default */
 .flux-stepper {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
   height: 28px;
   border: 1px solid var(--color-border-default);
@@ -195,8 +196,13 @@ a.flux-link:visited { color: var(--component-link-variant-primary-visited-text);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  padding-bottom: var(--spacing-sm);
+}
+/* Bleed: the rail runs to the screen edges while the first card stays aligned with the content (24px). */
+.flux-rail--bleed {
   margin: 0 calc(var(--spacing-xl) * -1);
   padding: 0 var(--spacing-xl) var(--spacing-sm);
+  scroll-padding: 0 var(--spacing-xl);
 }
 .flux-rail::-webkit-scrollbar { display: none; }
 .flux-rail > * { flex: none; scroll-snap-align: start; }
@@ -224,3 +230,6 @@ a.flux-link:visited { color: var(--component-link-variant-primary-visited-text);
 }
 h1.flux-app-header__title { cursor: default; }
 .flux-app-header__actions { display: flex; gap: var(--spacing-lg); }
+
+/* Links and buttons directly in a card keep their own width */
+.flux-card > .flux-link, .flux-card > .flux-button { align-self: flex-start; }

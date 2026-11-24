@@ -87,9 +87,9 @@ function StepperButton({ icon, ...rest }: ButtonHTMLAttributes<HTMLButtonElement
 }
 
 /** Horizontal scroll of cards (news, events). Children keep their own width. */
-export function Rail({ children, label }: { children: React.ReactNode; label?: string }) {
+export function Rail({ children, label, bleed = false }: { children: React.ReactNode; label?: string; /** Run to the screen edges (inside a 24px-padded screen). */ bleed?: boolean }) {
   return (
-    <div className="flux-rail" role="list" aria-label={label}>
+    <div className={`flux-rail${bleed ? ' flux-rail--bleed' : ''}`} role="list" aria-label={label}>
       {children}
     </div>
   );
