@@ -11,9 +11,11 @@ export type BottomSheetProps = {
   children: React.ReactNode;
   /** 'bottom' (default) slides up from the bottom; 'top' drops down under a header, e.g. a view switcher. */
   from?: 'bottom' | 'top';
+  /** Space to leave free at the top (px), e.g. the header height, so the header stays visible. */
+  offsetTop?: number;
 };
 
-export function BottomSheet({ open, onClose, title, description, children, from = 'bottom' }: BottomSheetProps) {
+export function BottomSheet({ open, onClose, title, description, children, from = 'bottom', offsetTop = 0 }: BottomSheetProps) {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
@@ -23,7 +25,7 @@ export function BottomSheet({ open, onClose, title, description, children, from 
 
   if (!open) return null;
   return (
-    <div className={`flux-sheet-layer flux-sheet-layer--${from}`}>
+    <div className={`flux-sheet-layer flux-sheet-layer--${from}`} style={offsetTop ? { top: offsetTop } : undefined}>
       <div className="flux-overlay" onClick={onClose} aria-hidden="true" />
       <div className={`flux-sheet flux-sheet--${from}`} role="dialog" aria-modal="true" aria-label={title}>
         {(title || description) && (

@@ -212,7 +212,7 @@ function FormsAndOverlays() {
             actions={<><IconButton icon="Search" label="Search" variant="secondary" /><IconButton icon="Notifications | Bell" label="Notifications" variant="secondary" /></>}
           />
           <div className="phone-demo__body p4-regular f-note">Tap the title</div>
-          <BottomSheet open={open} onClose={() => setOpen(false)} from="top">
+          <BottomSheet open={open} onClose={() => setOpen(false)} from="top" offsetTop={48}>
             {views.map((v) => (
               <NavItem key={v.value} icon={v.icon} title={v.title} description={v.description} selected={v.value === view} onClick={() => { setView(v.value); setOpen(false); }} />
             ))}
