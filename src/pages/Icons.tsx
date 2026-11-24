@@ -76,7 +76,7 @@ export default function Icons() {
       <section className="f-section">
         <h2 className="h3">Icon General</h2>
         <p className="p4-regular f-note">
-          {Object.keys(iconGeneral).length} of 69 · the ones the prototype needs for now
+          {Object.keys(iconGeneral).length} of 69 · the ones prototypes need so far
         </p>
         <Grid names={Object.keys(iconGeneral)} filter={filter} colour={colour} />
       </section>

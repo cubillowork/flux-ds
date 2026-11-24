@@ -7,7 +7,7 @@ Docs site: **https://cubillowork.github.io/flux-ds/** — Foundations · Icons �
 ## Use it in a prototype
 
 ```bash
-npm install github:cubillowork/flux-ds#v0.1.0
+npm install github:cubillowork/flux-ds#v0.2.0
 ```
 
 ```tsx
@@ -21,7 +21,7 @@ import { Button, Icon } from 'flux-ds';
 <Icon name="Search" color="var(--color-interactive-primary)" />
 ```
 
-Works with Vite + React (the package ships TypeScript source; Vite compiles it). Pin a version tag (`#v0.1.0`) so a change in the DS never breaks a prototype you already showed; update the tag when you want the new version.
+Works with Vite + React (the package ships TypeScript source; Vite compiles it). Pin a version tag (`#v0.2.0`) so a change in the DS never breaks a prototype you already showed; update the tag when you want the new version.
 
 ## What's inside
 
@@ -30,9 +30,17 @@ Works with Vite + React (the package ships TypeScript source; Vite compiles it).
 | Tokens | Variables: 01-Core, 02-Semantic, 03–12 components (282) | CSS variables: `color/text/primary` → `var(--color-text-primary)` |
 | Text styles | heading/h0–h7, paragraph/p1–p6 | classes: `.h3`, `.p4-regular`, `.p2-semibold` |
 | Elevation | elevation/card | `var(--shadow-elevation-card)` |
-| Icons | Icon Clickable (36/36), Icon General (32/69) | `<Icon name="…" />` |
+| Icons | Icon Clickable (36/36), Icon General (38/69) | `<Icon name="…" />` |
 | Button | Button: Type × Size × State × With icon | `<Button variant size icon fullWidth />` |
 | Button icon | Button icon: Type × State | `<IconButton icon label variant />` |
+| Tag | Tag: Category × Status | `<Tag status="online" />` |
+| Chip | chip | `<Chip selected />`, `<ChipGroup options value onChange />` |
+| Tabs | tabs menu + item | `<Tabs tabs value onChange />` |
+| Info box | Info box | `<InfoBox type="warning" />` |
+| Alert | alert mobile | `<AlertItem level title meta status />` |
+| Card | system card, Graph Header | `<Card>`, `<CardHeader>`, `<CardBody>`, `<KeyValue>`, `<SectionHeader>` |
+| Header mobile | Header mobile | `<HeaderMobile title onBack actions />` |
+| Bottom navigation | Navigation Bar Installers / HO | `<BottomNav items value onChange />` |
 
 Rule: components only use tokens — no hex or pixel values by hand.
 
@@ -56,6 +64,6 @@ Folder structure: `src/flux/` is the package (what prototypes import). `src/page
 - [x] Tokens, text styles, elevation
 - [x] Icons (Clickable complete, General partial)
 - [x] Button, Button icon
-- [ ] Card, Status tag, Tabs, Toggle, Link
-- [ ] Text field, Select, Checkbox, Progress circle
-- [ ] Mobile shell: header, bottom navigation
+- [x] Tag, Chip, Tabs, Info box, Alert, Card, Header mobile, Bottom navigation
+- [ ] Text field, Select, Checkbox, Selection card, Progress circle
+- [ ] Dialog, Toast, Bottom sheet, Spinner
