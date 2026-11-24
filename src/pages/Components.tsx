@@ -4,6 +4,7 @@ import {
   Card, CardHeader, CardBody, KeyValue, SectionHeader, HeaderMobile, BottomNav, Icon,
   Link, TextField, SearchField, BottomSheet, NavItem, ProgressCircle, ProgressBar,
   ListItem, StatusDot, Badge, Stepper, Rail, AppHeader,
+  Skeleton, SkeletonText, SkeletonCard, EmptyState,
 } from '../flux';
 import './Foundations.css';
 import './Components.css';
@@ -358,6 +359,26 @@ export default function Components() {
 
       <MoreComponents />
       <FormsAndOverlays />
+
+      <section className="f-section">
+        <h2 className="h3">Loading and empty states <Proposal /></h2>
+        <p className="p4-regular f-note">Skeletons keep the layout of the content that is coming; empty states say what happened and what to do next.</p>
+        <div className="try-row" style={{ alignItems: 'flex-start' }}>
+          <div className="stack-327">
+            <SkeletonCard tags lines={2} />
+            <SkeletonCard media lines={1} />
+            <div className="try-row"><Skeleton circle width={40} height={40} /><SkeletonText lines={2} /></div>
+          </div>
+          <div className="stack-327" style={{ background: 'var(--color-background-subtle)', borderRadius: 8 }}>
+            <EmptyState icon="Search" title="No systems match" description="Try another name, address or ID." actionLabel="Clear search" onAction={() => {}} />
+          </div>
+        </div>
+      </section>
+
+      <section className="f-section">
+        <h2 className="h3">Refinements in v0.4.0 <Proposal /></h2>
+        <p className="p4-regular f-note">Differences from the Figma file, to be updated there: cards radius 8 (was 4) and softer elevation (0 2 8 · 6%); 16px padding inside cards and card headers; press feedback and focus ring on tappable surfaces; tabular figures for numbers; Button medium and Chip text 14px (was 13).</p>
+      </section>
 
       <section className="f-section">
         <h2 className="h3">Code</h2>

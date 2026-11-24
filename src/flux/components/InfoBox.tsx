@@ -7,7 +7,7 @@ export function InfoBox({ type = 'info', children }: InfoBoxProps) {
   return (
     <div className={`flux-infobox flux-infobox--${type}`} role={type === 'error' ? 'alert' : 'note'}>
       <Icon name={type === 'info' ? 'Information' : 'Alert'} size={16} className="flux-infobox__icon" />
-      <div className="p5-regular">{children}</div>
+      <div className="t-caption">{children}</div>
     </div>
   );
 }

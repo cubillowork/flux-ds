@@ -30,8 +30,8 @@ export function BottomSheet({ open, onClose, title, description, children, from 
       <div className={`flux-sheet flux-sheet--${from}`} role="dialog" aria-modal="true" aria-label={title}>
         {(title || description) && (
           <div className="flux-sheet__text">
-            {title && <h2 className="h1">{title}</h2>}
-            {description && <p className="p3-regular flux-sheet__description">{description}</p>}
+            {title && <h2 className="t-title">{title}</h2>}
+            {description && <p className="t-body flux-sheet__description">{description}</p>}
           </div>
         )}
         {children}
@@ -60,8 +60,8 @@ export function NavItem({ title, description, icon, selected, chevron = true, on
         </span>
       )}
       <span className="flux-nav-item__content">
-        <span className="p2-semibold">{title}</span>
-        {description && <span className="p5-regular flux-nav-item__description">{description}</span>}
+        <span className="t-subtitle">{title}</span>
+        {description && <span className="t-caption flux-nav-item__description">{description}</span>}
       </span>
       {selected ? <Icon name="Check | Done_line" size={18} className="flux-nav-item__check" /> : chevron && <Icon name="Arrow right" size={16} />}
     </button>

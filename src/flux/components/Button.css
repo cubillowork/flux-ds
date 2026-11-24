@@ -41,8 +41,8 @@
   --btn-padding: var(--component-button-size-medium-padding);
   --btn-gap: var(--component-button-size-medium-gap);
   --btn-icon: var(--component-button-size-medium-iconsize);
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 14px; /* refinement: Figma p4 13px → type role body 14px */
+  line-height: 20px;
 }
 .flux-button--big {
   --btn-height: var(--component-button-size-big-height);

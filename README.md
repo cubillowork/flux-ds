@@ -7,7 +7,7 @@ Docs site: **https://cubillowork.github.io/flux-ds/** — Foundations · Icons �
 ## Use it in a prototype
 
 ```bash
-npm install github:cubillowork/flux-ds#v0.3.0
+npm install github:cubillowork/flux-ds#v0.4.0
 ```
 
 ```tsx
@@ -21,7 +21,7 @@ import { Button, Icon } from 'flux-ds';
 <Icon name="Search" color="var(--color-interactive-primary)" />
 ```
 
-Works with Vite + React (the package ships TypeScript source; Vite compiles it). Pin a version tag (`#v0.3.0`) so a change in the DS never breaks a prototype you already showed; update the tag when you want the new version.
+Works with Vite + React (the package ships TypeScript source; Vite compiles it). Pin a version tag (`#v0.4.0`) so a change in the DS never breaks a prototype you already showed; update the tag when you want the new version.
 
 ## What's inside
 
@@ -60,6 +60,16 @@ Built with Flux tokens for the Installer prototype. Marked **PROPOSAL** on the d
 | `<Badge tone />` | HOT, NEW, Premier |
 | `<Stepper value onChange />` | Quantities in Buy products |
 | `<Rail>` | Horizontal scroll of news and event cards |
+| `<Skeleton>`, `<SkeletonText>`, `<SkeletonCard>`, `<LoadingRegion>` | Loading states that keep the layout |
+| `<EmptyState icon title description actionLabel onAction />` | Empty lists and no results |
+
+### Type roles (proposal, v0.4.0)
+
+Five sizes for screens — `.t-number` 24 · `.t-title` 18 · `.t-subtitle` 16 · `.t-body` / `.t-body-strong` 14 · `.t-caption` / `.t-caption-strong` 12, plus `.t-secondary` for secondary text. Components use them too.
+
+### Refinements (proposal, v0.4.0)
+
+Differences from Figma, to be updated there: card radius 8 and softer elevation (0 2 8 · 6%), 16px card padding, press feedback and focus ring, tabular numbers, Button medium and Chip text 14px.
 
 Rule: components only use tokens — no hex or pixel values by hand.
 
@@ -86,5 +96,6 @@ Folder structure: `src/flux/` is the package (what prototypes import). `src/page
 - [x] Tag, Chip, Tabs, Info box, Alert, Card, Header mobile, Bottom navigation
 - [x] Link, Text field, Bottom sheet, Nav item, Progress circle
 - [x] Proposals: AppHeader, ProgressBar, ListItem, StatusDot, Badge, Stepper, Rail
+- [x] Type roles, refinements, Skeleton, EmptyState
 - [ ] Select, Checkbox, Selection card
 - [ ] Dialog, Toast, Spinner

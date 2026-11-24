@@ -101,7 +101,26 @@ export default function Foundations() {
         ))}
       </Section>
 
-      <Section title="Typography" note="Lexend · text styles">
+      <Section title="Type roles" note="PROPOSAL v0.4.0 · five sizes for every screen (24 · 18 · 16 · 14 · 12). Use these in screens; the raw text styles below stay for components.">
+        <div className="type-list">
+          {[
+            ['t-number', 'Number · 24/28 bold', '12 systems'],
+            ['t-title', 'Title · 18/24 bold', 'Partner program'],
+            ['t-subtitle', 'Subtitle · 16/24 semibold', 'Systems overview'],
+            ['t-body', 'Body · 14/20 regular', 'Commissioning and monitor systems'],
+            ['t-body-strong', 'Body strong · 14/20 semibold', 'Jensen Residence'],
+            ['t-caption', 'Caption · 12/16 regular', 'Installed on Mar 3, 2026'],
+            ['t-caption-strong', 'Caption strong · 12/16 semibold', 'See all'],
+          ].map(([cls, meta, sample]) => (
+            <div key={cls} className="type-row">
+              <span className="p5-regular type-meta">.{cls}<br />{meta}</span>
+              <span className={cls}>{sample}</span>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Typography" note="Lexend · text styles from Figma">
         <div className="type-list">
           {textStyles.map((s) => (
             <div key={s.name} className="type-row">

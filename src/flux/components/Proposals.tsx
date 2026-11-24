@@ -23,8 +23,8 @@ export function ListItem({
     <>
       {icon && <Icon name={icon} className="flux-list-item__icon" />}
       <span className="flux-list-item__content">
-        <span className="p3-semibold">{title}</span>
-        {description && <span className="p5-regular flux-list-item__description">{description}</span>}
+        <span className="t-body-strong">{title}</span>
+        {description && <span className="t-caption flux-list-item__description">{description}</span>}
       </span>
       {trailing && <span className="flux-list-item__trailing">{trailing}</span>}
     </>
@@ -44,7 +44,7 @@ export function StatusDot({ tone = 'success', children }: { tone?: StatusTone; c
   return (
     <span className={`flux-status-dot flux-status-dot--${tone}`}>
       <span className="flux-status-dot__dot" />
-      <span className="p5-regular">{children}</span>
+      <span className="t-caption">{children}</span>
     </span>
   );
 }
@@ -71,7 +71,7 @@ export function Stepper({
   return (
     <div className="flux-stepper" role="group" aria-label={label}>
       <StepperButton aria-label="Decrease" disabled={value <= min} onClick={() => onChange(Math.max(min, value - 1))} icon="Remove" />
-      <span className="p4-semibold flux-stepper__value" aria-live="polite">
+      <span className="t-body-strong flux-stepper__value" aria-live="polite">
         {value}
       </span>
       <StepperButton aria-label="Increase" disabled={value >= max} onClick={() => onChange(Math.min(max, value + 1))} icon="Add" />
@@ -112,11 +112,11 @@ export function AppHeader({
     <header className="flux-app-header">
       {onTitleClick ? (
         <button type="button" className="flux-app-header__title" onClick={onTitleClick} aria-expanded={switcherOpen} aria-haspopup="dialog">
-          <span className="h4">{title}</span>
+          <span className="t-title">{title}</span>
           <Icon name={switcherOpen ? 'Expand up' : 'Expand down'} />
         </button>
       ) : (
-        <h1 className="h4 flux-app-header__title">{title}</h1>
+        <h1 className="t-title flux-app-header__title">{title}</h1>
       )}
       {actions && <div className="flux-app-header__actions">{actions}</div>}
     </header>

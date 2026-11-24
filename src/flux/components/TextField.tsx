@@ -23,18 +23,18 @@ export function TextField({ label, hint, error, size = 'lg', icon, unit, id, cla
   return (
     <div className={['flux-field', className].filter(Boolean).join(' ')}>
       {label && (
-        <label htmlFor={fieldId} className="p5-regular flux-field__label">
+        <label htmlFor={fieldId} className="t-caption flux-field__label">
           {label}
           {rest.required && <span className="flux-field__required"> *</span>}
         </label>
       )}
       <div className={`flux-input flux-input--${size}${error ? ' is-error' : ''}${rest.disabled ? ' is-disabled' : ''}`}>
         {icon && <Icon name={icon} size={size === 'lg' ? 24 : 18} className="flux-input__icon" />}
-        <input id={fieldId} aria-invalid={!!error} aria-describedby={hintId} className="p3-regular" {...rest} />
-        {unit && <span className="p3-regular flux-input__unit">{unit}</span>}
+        <input id={fieldId} aria-invalid={!!error} aria-describedby={hintId} className="t-body" {...rest} />
+        {unit && <span className="t-body flux-input__unit">{unit}</span>}
       </div>
       {(error || hint) && (
-        <span id={hintId} className={`p5-regular ${error ? 'flux-field__error' : 'flux-field__hint'}`}>
+        <span id={hintId} className={`t-caption ${error ? 'flux-field__error' : 'flux-field__hint'}`}>
           {error && <Icon name="Alert" size={16} />}
           {error ?? hint}
         </span>

@@ -37,8 +37,8 @@
   background: var(--component-toggle-state-off-background);
   color: var(--color-text-primary);
   font-family: var(--font-family);
-  font-size: 13px;
-  line-height: 16px;
+  font-size: 14px;
+  line-height: 20px;
   white-space: nowrap;
   cursor: pointer;
 }

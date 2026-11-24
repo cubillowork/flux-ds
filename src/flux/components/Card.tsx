@@ -25,7 +25,7 @@ export function Card({ children, padding = 'lg', onClick, className }: CardProps
 export function CardHeader({ title, onClick, action }: { title: string; onClick?: () => void; action?: React.ReactNode }) {
   const content = (
     <>
-      <span className="p3-semibold">{title}</span>
+      <span className="t-body-strong">{title}</span>
       {action ?? (onClick && <Icon name="Arrow right" size={18} />)}
     </>
   );
@@ -46,8 +46,8 @@ export function CardBody({ children }: { children: React.ReactNode }) {
 export function KeyValue({ label, value }: { label: string; value: React.ReactNode }) {
   return (
     <div className="flux-kv">
-      <span className="p5-regular">{label}</span>
-      <span className="p5-semibold">{value}</span>
+      <span className="t-caption">{label}</span>
+      <span className="t-caption-strong">{value}</span>
     </div>
   );
 }
@@ -56,9 +56,9 @@ export function KeyValue({ label, value }: { label: string; value: React.ReactNo
 export function SectionHeader({ title, actionLabel, onAction }: { title: string; actionLabel?: string; onAction?: () => void }) {
   return (
     <div className="flux-section-header">
-      <h2 className="h5">{title}</h2>
+      <h2 className="t-subtitle">{title}</h2>
       {actionLabel && (
-        <button type="button" className="flux-link p5-semibold" onClick={onAction}>
+        <button type="button" className="flux-link t-caption-strong" onClick={onAction}>
           {actionLabel}
         </button>
       )}

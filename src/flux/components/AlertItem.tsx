@@ -17,11 +17,11 @@ export function AlertItem({ level = 'emergency', title, meta, status, onClick }:
       <span className="flux-alert__content">
         <span className="flux-alert__title">
           <Icon name={level === 'info' ? 'Information' : 'Alert'} size={16} className="flux-alert__icon" />
-          <span className="p4-semibold">{title}</span>
+          <span className="t-body-strong">{title}</span>
         </span>
-        {meta && <span className="p5-regular">{meta}</span>}
+        {meta && <span className="t-caption">{meta}</span>}
       </span>
-      {status && <span className="p4-semibold">{status}</span>}
+      {status && <span className="t-body-strong">{status}</span>}
       <Icon name="Arrow right" size={24} />
     </button>
   );

@@ -1,0 +1,37 @@
+/* Flux DS · Refinements (PROPOSAL v0.4.0) — differences from the Figma file, to be updated in Figma.
+   1. Cards: radius md (8) instead of sm (4); softer elevation; 16px inner padding everywhere.
+   2. Press feedback and keyboard focus on every tappable surface.
+   3. Tabular figures for numbers. */
+:root {
+  --shadow-elevation-card: 0 2px 8px 0 rgb(0 0 0 / 0.06); /* Figma elevation/card: 0 4 12 · 8% */
+}
+.flux-card { border-radius: var(--radius-md); }
+.flux-card-header { padding: 0 var(--spacing-lg); border-bottom-color: var(--color-border-subtle); }
+.flux-card-body { padding: var(--spacing-lg); }
+
+/* Press feedback */
+* { -webkit-tap-highlight-color: transparent; }
+.flux-card.is-clickable, .flux-list-item.is-clickable, .flux-nav-item, .flux-card-header.is-clickable, .flux-alert {
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+.flux-card.is-clickable:active, .flux-alert:active { transform: scale(0.985); }
+.flux-list-item.is-clickable:active, .flux-nav-item:active, .flux-card-header.is-clickable:active { opacity: 0.6; }
+
+/* Keyboard focus */
+.flux-card.is-clickable:focus-visible, .flux-list-item.is-clickable:focus-visible, .flux-nav-item:focus-visible,
+.flux-card-header.is-clickable:focus-visible, .flux-alert:focus-visible, .flux-bottom-nav__item:focus-visible,
+.flux-tab:focus-visible, .flux-header-mobile__back:focus-visible, .flux-app-header__title:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Numbers */
+.flux-kv, .flux-stepper__value, .flux-progress-circle__text { font-variant-numeric: tabular-nums; }
+
+/* Text wrapping */
+.t-number, .t-title, .t-subtitle { text-wrap: balance; }
+.t-body, .t-caption { text-wrap: pretty; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flux-card, .flux-list-item, .flux-nav-item, .flux-alert { transition: none; }
+}

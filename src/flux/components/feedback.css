@@ -1,0 +1,39 @@
+/* Flux DS · Skeleton and empty state (PROPOSALS). Tokens only. */
+.flux-skeleton {
+  display: block;
+  flex: none;
+  background: linear-gradient(90deg, var(--color-background-strong) 0%, var(--color-background-subtle) 50%, var(--color-background-strong) 100%);
+  background-size: 200% 100%;
+  animation: flux-shimmer 1.3s ease-in-out infinite;
+}
+.flux-skeleton-text { display: flex; flex-direction: column; gap: var(--spacing-sm); width: 100%; }
+.flux-skeleton-card { gap: 0; overflow: hidden; }
+.flux-skeleton-card__body { display: flex; flex-direction: column; gap: var(--spacing-md); padding: var(--spacing-lg); }
+.flux-skeleton-card__row { display: flex; gap: var(--spacing-md); }
+.flux-loading-region { display: contents; }
+.flux-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@keyframes flux-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+
+.flux-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  text-align: center;
+}
+.flux-empty__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: var(--spacing-sm);
+  border-radius: 50%;
+  background: var(--color-background-strong);
+  color: var(--color-text-secondary);
+}
+.flux-empty .flux-button { margin-top: var(--spacing-md); }
+
+@media (prefers-reduced-motion: reduce) {
+  .flux-skeleton { animation: none; }
+}

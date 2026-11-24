@@ -34,8 +34,8 @@ export function ProgressCircle({ value, size = 'md', label, valueText }: Progres
         />
       </svg>
       <span className="flux-progress-circle__text">
-        <span className={size === 'sm' ? 'p5-semibold' : 'h2'}>{valueText ?? `${v}%`}</span>
-        {label && size !== 'sm' && <span className="p4-regular flux-progress-circle__label">{label}</span>}
+        <span className={size === 'sm' ? 't-caption-strong' : 't-number'}>{valueText ?? `${v}%`}</span>
+        {label && size !== 'sm' && <span className="t-body flux-progress-circle__label">{label}</span>}
       </span>
     </div>
   );

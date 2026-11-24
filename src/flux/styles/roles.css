@@ -1,0 +1,12 @@
+/* Flux DS · Type roles (PROPOSAL v0.4.0)
+   Five sizes for all product screens: 24 · 18 · 16 · 14 · 12.
+   Built from existing Flux text styles; use roles in screens instead of raw h1–h7 / p1–p6.
+   Component-internal sizes (Tag 10, Button 12/16) stay as in the component spec. */
+.t-number        { font-family: var(--font-family); font-size: 24px; line-height: 28px; font-weight: 700; font-variant-numeric: tabular-nums; } /* heading/h2 */
+.t-title         { font-family: var(--font-family); font-size: 18px; line-height: 24px; font-weight: 700; }                                   /* heading/h4 */
+.t-subtitle      { font-family: var(--font-family); font-size: 16px; line-height: 24px; font-weight: 600; }                                   /* paragraph/p2/semibold */
+.t-body          { font-family: var(--font-family); font-size: 14px; line-height: 20px; font-weight: 400; }                                   /* paragraph/p3/regular, line height 20 */
+.t-body-strong   { font-family: var(--font-family); font-size: 14px; line-height: 20px; font-weight: 600; }                                   /* paragraph/p3/semibold, line height 20 */
+.t-caption       { font-family: var(--font-family); font-size: 12px; line-height: 16px; font-weight: 400; }                                   /* paragraph/p5/regular */
+.t-caption-strong{ font-family: var(--font-family); font-size: 12px; line-height: 16px; font-weight: 600; }                                   /* paragraph/p5/semibold */
+.t-secondary     { color: var(--color-text-secondary); }

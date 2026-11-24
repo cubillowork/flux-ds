@@ -16,3 +16,5 @@ export { BottomSheet, NavItem, type BottomSheetProps, type NavItemProps } from '
 export { ProgressCircle, ProgressBar, type ProgressCircleProps } from './components/Progress';
 // Proposals — not in Flux Figma yet
 export { ListItem, StatusDot, Badge, Stepper, Rail, AppHeader, type StatusTone } from './components/Proposals';
+// v0.4.0 proposals — loading and empty states
+export { Skeleton, SkeletonText, SkeletonCard, LoadingRegion, EmptyState } from './components/Feedback';

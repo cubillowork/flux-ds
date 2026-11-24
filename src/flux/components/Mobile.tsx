@@ -10,7 +10,7 @@ export function HeaderMobile({ title, onBack, actions }: { title?: string; onBac
           <Icon name="Arrow left" />
         </button>
       )}
-      {title && <h1 className="p2-semibold flux-header-mobile__title">{title}</h1>}
+      {title && <h1 className="t-subtitle flux-header-mobile__title">{title}</h1>}
       {actions && <div className="flux-header-mobile__actions">{actions}</div>}
     </header>
   );
@@ -42,7 +42,7 @@ export function BottomNav<T extends string>({
             <Icon name={item.icon} />
             {item.badge && <span className="flux-bottom-nav__badge" />}
           </span>
-          <span className="p5-regular">{item.label}</span>
+          <span className="t-caption">{item.label}</span>
         </button>
       ))}
     </nav>
