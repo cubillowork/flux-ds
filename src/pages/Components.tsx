@@ -2,6 +2,8 @@ import { useState } from 'react';
 import {
   Button, IconButton, Tag, Chip, ChipGroup, Tabs, InfoBox, AlertItem,
   Card, CardHeader, CardBody, KeyValue, SectionHeader, HeaderMobile, BottomNav, Icon,
+  Link, TextField, SearchField, BottomSheet, NavItem, ProgressCircle, ProgressBar,
+  ListItem, StatusDot, Badge, Stepper, Rail, AppHeader,
 } from '../flux';
 import './Foundations.css';
 import './Components.css';
@@ -161,6 +163,139 @@ function MoreComponents() {
   );
 }
 
+function Proposal() {
+  return <span className="proposal-mark p6-semibold">PROPOSAL · not in Figma yet</span>;
+}
+
+function FormsAndOverlays() {
+  const [open, setOpen] = useState(false);
+  const [view, setView] = useState('installs');
+  const views = [
+    { value: 'installs', title: 'Installs', description: 'Commissioning and monitor systems', icon: 'PV | Solar system' },
+    { value: 'academy', title: 'Academy', description: 'Training videos, live training and courses', icon: 'Idea' },
+    { value: 'partner', title: 'Partner program', description: 'Your tier, benefits, leads and marketing', icon: 'agreement' },
+    { value: 'buy', title: 'Buy products', description: 'Catalogue, cart and price requests', icon: 'My products' },
+  ] as const;
+  const current = views.find((v) => v.value === view)!;
+  return (
+    <>
+      <section className="f-section">
+        <h2 className="h3">Link</h2>
+        <p className="p4-regular f-note">Figma “Label” in the Link frame · p5 semibold · link tokens.</p>
+        <div className="try-row">
+          <Link onClick={() => {}}>Register</Link>
+          <Link href="#/components">See all</Link>
+          <Link disabled>Disabled</Link>
+        </div>
+      </section>
+
+      <section className="f-section">
+        <h2 className="h3">Text field</h2>
+        <p className="p4-regular f-note">Figma “Input” + “Field” · md 36 / lg 48 · label, hint, error, icon, unit.</p>
+        <div className="stack-327">
+          <SearchField placeholder="Search SKU, model or product" aria-label="Search" />
+          <TextField label="Serial number" placeholder="S1A23B456789012" hint="On the label under the inverter" required />
+          <TextField label="System size" defaultValue="8.2" unit="kW" />
+          <TextField label="Homeowner email" defaultValue="jess@" error="Enter a valid email" />
+          <TextField label="Installer ID" defaultValue="INST-0042" disabled size="md" />
+        </div>
+      </section>
+
+      <section className="f-section">
+        <h2 className="h3">Bottom sheet and Nav item</h2>
+        <p className="p4-regular f-note">Figma “Dropdown - Bottom sheet”, “Overlay” and “Horizontal navigation item”. Here used as the view switcher (from="top").</p>
+        <div className="phone-demo" style={{ position: 'relative', height: 420 }}>
+          <AppHeader
+            title={current.title}
+            onTitleClick={() => setOpen(!open)}
+            switcherOpen={open}
+            actions={<><IconButton icon="Search" label="Search" variant="secondary" /><IconButton icon="Notifications | Bell" label="Notifications" variant="secondary" /></>}
+          />
+          <div className="phone-demo__body p4-regular f-note">Tap the title</div>
+          <BottomSheet open={open} onClose={() => setOpen(false)} from="top">
+            {views.map((v) => (
+              <NavItem key={v.value} icon={v.icon} title={v.title} description={v.description} selected={v.value === view} onClick={() => { setView(v.value); setOpen(false); }} />
+            ))}
+          </BottomSheet>
+        </div>
+        <NavItem icon="Settings | Gear" title="System mode" description="Change battery capacity" />
+      </section>
+
+      <section className="f-section">
+        <h2 className="h3">Progress circle</h2>
+        <div className="try-row">
+          <ProgressCircle value={40} size="sm" />
+          <ProgressCircle value={40} size="md" label="Active users" />
+        </div>
+      </section>
+
+      <section className="f-section">
+        <h2 className="h3">Proposals <Proposal /></h2>
+        <p className="p4-regular f-note">Patterns the Installer prototype needs that Flux Figma doesn't have yet. Built only with Flux tokens — validate them and add them to Figma.</p>
+
+        <h3 className="h6">AppHeader — root screens, title opens the view switcher</h3>
+        <div className="phone-demo" style={{ height: 'auto' }}>
+          <AppHeader title="Installs" onTitleClick={() => {}} actions={<IconButton icon="Notifications | Bell" label="Notifications" variant="secondary" />} />
+        </div>
+
+        <h3 className="h6">ProgressBar</h3>
+        <div className="stack-327">
+          <div className="try-row"><span className="h3">35%</span><span className="p4-regular f-note">to Premier</span></div>
+          <ProgressBar value={35} label="Progress to Premier" />
+          <span className="p5-regular f-note">7 of 20 storage kits purchased</span>
+        </div>
+
+        <h3 className="h6">ListItem</h3>
+        <div className="stack-327">
+          <Card padding="none">
+            <CardHeader title="Pending warranties" onClick={() => {}} />
+            <div style={{ padding: '0 var(--spacing-md)' }}>
+              <ListItem title="Jess Becker" description="Commissioned 12 Nov · not registered" trailing={<Link>Register</Link>} />
+              <ListItem title="Martin Ruiz" description="Draft · missing homeowner consent" trailing={<Link>Register</Link>} />
+            </div>
+          </Card>
+          <Card padding="md">
+            <ListItem icon="Check | Done_line" title="Base discount on purchases" />
+            <ListItem icon="Lock" title="Marketing support" trailing={<Badge>Premier</Badge>} />
+          </Card>
+        </div>
+
+        <h3 className="h6">StatusDot and Badge</h3>
+        <div className="try-row">
+          <StatusDot tone="success">Normal</StatusDot>
+          <StatusDot tone="warning">Alerts</StatusDot>
+          <StatusDot tone="neutral">Offline</StatusDot>
+          <StatusDot tone="info">In stock soon</StatusDot>
+          <Badge tone="error">Hot</Badge>
+          <Badge tone="success">New</Badge>
+          <Badge>Premier</Badge>
+        </div>
+
+        <h3 className="h6">Stepper</h3>
+        <StepperDemo />
+
+        <h3 className="h6">Rail</h3>
+        <div className="stack-327" style={{ overflow: 'hidden' }}>
+          <Rail label="Latest news">
+            {['SunPower Installer App: More Control, More Value', 'SunPower Origin is here', 'Winning with Back Contact'].map((t) => (
+              <Card key={t} padding="md" className="rail-card">
+                <span className="p4-semibold">{t}</span>
+                <span className="p5-regular f-note">21 July 2026</span>
+                <Link>Read more</Link>
+              </Card>
+            ))}
+          </Rail>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function StepperDemo() {
+  const [q, setQ] = useState(0);
+  return <Stepper value={q} onChange={setQ} />;
+}
+
 export default function Components() {
   return (
     <main className="foundations">
@@ -222,6 +357,7 @@ export default function Components() {
       </section>
 
       <MoreComponents />
+      <FormsAndOverlays />
 
       <section className="f-section">
         <h2 className="h3">Code</h2>

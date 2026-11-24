@@ -7,7 +7,7 @@ Docs site: **https://cubillowork.github.io/flux-ds/** — Foundations · Icons �
 ## Use it in a prototype
 
 ```bash
-npm install github:cubillowork/flux-ds#v0.2.0
+npm install github:cubillowork/flux-ds#v0.3.0
 ```
 
 ```tsx
@@ -21,7 +21,7 @@ import { Button, Icon } from 'flux-ds';
 <Icon name="Search" color="var(--color-interactive-primary)" />
 ```
 
-Works with Vite + React (the package ships TypeScript source; Vite compiles it). Pin a version tag (`#v0.2.0`) so a change in the DS never breaks a prototype you already showed; update the tag when you want the new version.
+Works with Vite + React (the package ships TypeScript source; Vite compiles it). Pin a version tag (`#v0.3.0`) so a change in the DS never breaks a prototype you already showed; update the tag when you want the new version.
 
 ## What's inside
 
@@ -41,6 +41,25 @@ Works with Vite + React (the package ships TypeScript source; Vite compiles it).
 | Card | system card, Graph Header | `<Card>`, `<CardHeader>`, `<CardBody>`, `<KeyValue>`, `<SectionHeader>` |
 | Header mobile | Header mobile | `<HeaderMobile title onBack actions />` |
 | Bottom navigation | Navigation Bar Installers / HO | `<BottomNav items value onChange />` |
+| Link | Link → Label | `<Link>` (button) or `<Link href>` |
+| Text field | Input + Field | `<TextField label hint error icon unit size />`, `<SearchField />` |
+| Bottom sheet | Dropdown - Bottom sheet + Overlay | `<BottomSheet open onClose title description from />` |
+| Nav item | Horizontal navigation item | `<NavItem icon title description selected />` |
+| Progress circle | Progress circle | `<ProgressCircle value size label />` |
+
+### Proposals (not in Flux Figma yet)
+
+Built with Flux tokens for the Installer prototype. Marked **PROPOSAL** on the docs site — validate them, add them to Figma, then remove the mark.
+
+| Component | What for |
+|---|---|
+| `<AppHeader title onTitleClick actions />` | Root screens; title opens the view switcher |
+| `<ProgressBar value />` | Training and partner tier progress |
+| `<ListItem icon title description trailing />` | Pending warranties, benefits, settings lists |
+| `<StatusDot tone />` | "● Normal", "● In stock" |
+| `<Badge tone />` | HOT, NEW, Premier |
+| `<Stepper value onChange />` | Quantities in Buy products |
+| `<Rail>` | Horizontal scroll of news and event cards |
 
 Rule: components only use tokens — no hex or pixel values by hand.
 
@@ -65,5 +84,7 @@ Folder structure: `src/flux/` is the package (what prototypes import). `src/page
 - [x] Icons (Clickable complete, General partial)
 - [x] Button, Button icon
 - [x] Tag, Chip, Tabs, Info box, Alert, Card, Header mobile, Bottom navigation
-- [ ] Text field, Select, Checkbox, Selection card, Progress circle
-- [ ] Dialog, Toast, Bottom sheet, Spinner
+- [x] Link, Text field, Bottom sheet, Nav item, Progress circle
+- [x] Proposals: AppHeader, ProgressBar, ListItem, StatusDot, Badge, Stepper, Rail
+- [ ] Select, Checkbox, Selection card
+- [ ] Dialog, Toast, Spinner

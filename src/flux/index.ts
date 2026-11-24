@@ -10,3 +10,9 @@ export { InfoBox, type InfoBoxProps } from './components/InfoBox';
 export { AlertItem, type AlertItemProps } from './components/AlertItem';
 export { Card, CardHeader, CardBody, KeyValue, SectionHeader, type CardProps } from './components/Card';
 export { HeaderMobile, BottomNav, type BottomNavItem } from './components/Mobile';
+export { Link, type LinkProps } from './components/Link';
+export { TextField, SearchField, type TextFieldProps } from './components/TextField';
+export { BottomSheet, NavItem, type BottomSheetProps, type NavItemProps } from './components/BottomSheet';
+export { ProgressCircle, ProgressBar, type ProgressCircleProps } from './components/Progress';
+// Proposals — not in Flux Figma yet
+export { ListItem, StatusDot, Badge, Stepper, Rail, AppHeader, type StatusTone } from './components/Proposals';

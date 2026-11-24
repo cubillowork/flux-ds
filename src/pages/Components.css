@@ -25,3 +25,14 @@
   background: var(--color-background-subtle);
 }
 .phone-demo__body { flex: 1; display: grid; place-items: center; }
+.proposal-mark {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: var(--spacing-sm);
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--color-yellow-200);
+  color: var(--color-yellow-700);
+  letter-spacing: 0.04em;
+}
+.rail-card { width: 240px; }
