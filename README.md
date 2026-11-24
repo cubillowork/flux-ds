@@ -9,7 +9,7 @@ Live: https://cubillowork.github.io/flux-installer-prototype/
 | Step | What | Status |
 |---|---|---|
 | 1 | Tokens from the Flux DS Figma variables | ✅ |
-| 2 | Icons (Icon General / Icon Clickable) | ⏳ |
+| 2 | Icons — all 36 Icon Clickable + 31 of 69 Icon General | ✅ (partial) |
 | 3 | Base components (Button, Card, Status tag…) | ⏳ |
 | 4 | App shell (header + view switcher, bottom bars) | ⏳ |
 | 5 | Prototype screens | ⏳ |
