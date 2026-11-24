@@ -1,4 +1,4 @@
-import { tokens, textStyles } from '../tokens.generated';
+import { tokens, textStyles } from '../flux';
 import './Foundations.css';
 
 type Token = (typeof tokens)[number];

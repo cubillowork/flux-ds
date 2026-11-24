@@ -1,0 +1,7 @@
+/* Flux DS — everything a prototype needs: font, tokens, text styles, component styles. */
+@import '@fontsource/lexend/400.css';
+@import '@fontsource/lexend/600.css';
+@import '@fontsource/lexend/700.css';
+@import './styles/tokens.css';
+@import './styles/typography.css';
+@import './components/Button.css';

@@ -1,0 +1,107 @@
+/* Flux DS · Button — every value comes from a token (03-Comp Buttons). */
+.flux-button {
+  --btn-bg: var(--component-button-variant-primary-default-background);
+  --btn-text: var(--component-button-variant-primary-default-text);
+  --btn-border: var(--component-button-variant-primary-default-border);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--btn-height);
+  padding: 0 var(--btn-padding);
+  gap: var(--btn-gap);
+  border: 1px solid var(--btn-border);
+  border-radius: var(--component-button-shared-radius);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-family: var(--font-family);
+  font-weight: 400;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+.flux-button__icon {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  flex: none;
+}
+.flux-button--full { width: 100%; }
+
+/* Sizes — label text styles: Big p2, Medium p4, Small p5 */
+.flux-button--small {
+  --btn-height: var(--component-button-size-small-height);
+  --btn-padding: var(--component-button-size-small-padding);
+  --btn-gap: var(--component-button-size-small-gap);
+  --btn-icon: var(--component-button-size-small-iconsize);
+  font-size: 12px;
+  line-height: 16px;
+}
+.flux-button--medium {
+  --btn-height: var(--component-button-size-medium-height);
+  --btn-padding: var(--component-button-size-medium-padding);
+  --btn-gap: var(--component-button-size-medium-gap);
+  --btn-icon: var(--component-button-size-medium-iconsize);
+  font-size: 13px;
+  line-height: 16px;
+}
+.flux-button--big {
+  --btn-height: var(--component-button-size-big-height);
+  --btn-padding: var(--component-button-size-big-padding);
+  --btn-gap: var(--component-button-size-big-gap);
+  --btn-icon: var(--component-button-size-big-iconsize);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Primary */
+.flux-button--primary:hover, .flux-button--primary[data-state='hover'] { --btn-bg: var(--component-button-variant-primary-hover-background); }
+.flux-button--primary:active, .flux-button--primary[data-state='pressed'] { --btn-bg: var(--component-button-variant-primary-pressed-background); }
+.flux-button--primary:disabled, .flux-button--primary[data-state='disabled'] {
+  --btn-bg: var(--component-button-variant-primary-disabled-background);
+  --btn-text: var(--component-button-variant-primary-disabled-text);
+  --btn-border: var(--component-button-variant-primary-disabled-text);
+}
+
+/* Secondary */
+.flux-button--secondary {
+  --btn-bg: var(--component-button-variant-secondary-default-background);
+  --btn-text: var(--component-button-variant-secondary-default-text);
+  --btn-border: var(--component-button-variant-secondary-default-border);
+}
+.flux-button--secondary:hover, .flux-button--secondary[data-state='hover'] { --btn-bg: var(--component-button-variant-secondary-hover-background); }
+.flux-button--secondary:active, .flux-button--secondary[data-state='pressed'] { --btn-bg: var(--component-button-variant-secondary-pressed-background); }
+.flux-button--secondary:disabled, .flux-button--secondary[data-state='disabled'] {
+  --btn-bg: var(--component-button-variant-secondary-disabled-background);
+  --btn-text: var(--component-button-variant-secondary-disabled-text);
+  --btn-border: var(--component-button-variant-secondary-disabled-border);
+}
+
+/* Focus (keyboard) — 3px inner border in Figma */
+.flux-button:focus-visible, .flux-button[data-state='focus'] {
+  outline: none;
+  box-shadow: inset 0 0 0 var(--component-button-shared-focus-borderwidth) var(--component-button-shared-focus-bordercolor);
+}
+.flux-button:disabled, .flux-button[data-state='disabled'] { cursor: not-allowed; }
+
+/* Button icon — 20×20, Icon Clickable 18px */
+.flux-icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--component-iconbutton-shared-width);
+  height: var(--component-iconbutton-shared-height);
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--component-iconbutton-variant-primary-default-icon);
+  cursor: pointer;
+}
+.flux-icon-button:hover, .flux-icon-button[data-state='hover'] { color: var(--component-iconbutton-variant-primary-hover-icon); }
+.flux-icon-button:disabled, .flux-icon-button[data-state='disabled'] { color: var(--component-iconbutton-variant-primary-disabled-icon); cursor: not-allowed; }
+.flux-icon-button--secondary { color: var(--component-iconbutton-variant-secondary-default-icon); }
+.flux-icon-button--secondary:hover, .flux-icon-button--secondary[data-state='hover'] { color: var(--component-iconbutton-variant-secondary-hover-icon); }
+.flux-icon-button--secondary:disabled, .flux-icon-button--secondary[data-state='disabled'] { color: var(--component-iconbutton-variant-secondary-disabled-icon); }
+.flux-icon-button:focus-visible, .flux-icon-button[data-state='focus'] {
+  outline: var(--component-iconbutton-shared-focus-borderwidth) solid var(--component-iconbutton-shared-focus-bordercolor);
+}

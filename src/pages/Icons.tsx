@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Icon } from '../icons/Icon';
-import { iconClickable, iconGeneral, type IconName } from '../icons/icons';
+import { Icon } from '../flux';
+import { iconClickable, iconGeneral, type IconName } from '../flux';
 import './Foundations.css';
 import './Icons.css';
 

@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import Foundations from './pages/Foundations';
 import Icons from './pages/Icons';
+import Components from './pages/Components';
 import './App.css';
 
 const pages = {
   foundations: { label: 'Foundations', component: Foundations },
   icons: { label: 'Icons', component: Icons },
+  components: { label: 'Components', component: Components },
 } as const;
 type PageKey = keyof typeof pages;
 

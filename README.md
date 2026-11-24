@@ -10,7 +10,7 @@ Live: https://cubillowork.github.io/flux-installer-prototype/
 |---|---|---|
 | 1 | Tokens from the Flux DS Figma variables | ✅ |
 | 2 | Icons — all 36 Icon Clickable + 31 of 69 Icon General | ✅ (partial) |
-| 3 | Base components (Button, Card, Status tag…) | ⏳ |
+| 3 | Base components — Button, Button icon ✅ · Card, Status tag, Tabs, Toggle… ⏳ | 🟡 |
 | 4 | App shell (header + view switcher, bottom bars) | ⏳ |
 | 5 | Prototype screens | ⏳ |
 | 6 | Publish on GitHub Pages | ✅ (on every push to `main`) |
