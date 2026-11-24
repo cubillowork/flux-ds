@@ -1,0 +1,69 @@
+.foundations {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+.f-header { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.f-eyebrow { color: var(--color-text-link); letter-spacing: 0.08em; }
+.f-note, .swatch-sub { color: var(--color-text-secondary); }
+.f-section {
+  background: var(--color-background-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevation-card);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+.family { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.swatch-row { display: flex; flex-wrap: wrap; gap: var(--spacing-md); }
+.swatch { width: 120px; display: flex; flex-direction: column; gap: var(--spacing-xs); }
+.swatch-chip {
+  height: 56px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-subtle);
+}
+.swatch-meta { display: flex; flex-direction: column; word-break: break-word; }
+.type-list { display: flex; flex-direction: column; gap: var(--spacing-md); }
+.type-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: baseline;
+  gap: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+.type-meta { color: var(--color-text-secondary); }
+.scale { display: flex; flex-direction: column; gap: var(--spacing-sm); }
+.scale-row { display: grid; grid-template-columns: 60px auto 1fr; align-items: center; gap: var(--spacing-md); }
+.spacing-bar { height: 16px; background: var(--color-blue-light-500); border-radius: var(--radius-sm); }
+.radius-box {
+  width: 120px;
+  height: 88px;
+  border: 1px solid var(--color-border-default);
+  background: var(--color-background-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--spacing-md);
+}
+.radius-box.elevation {
+  border: none;
+  background: var(--color-background-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-elevation-card);
+}
+.comp summary { cursor: pointer; padding: var(--spacing-sm) 0; }
+.comp table { width: 100%; border-collapse: collapse; }
+.comp td { padding: var(--spacing-xs) var(--spacing-sm); border-bottom: 1px solid var(--color-border-subtle); }
+.comp td:first-child { width: 28px; }
+.mini-chip {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+}
